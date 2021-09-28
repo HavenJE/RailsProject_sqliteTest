@@ -1,0 +1,46 @@
+Models are: 
+1. Posts    join table = categories & users 
+    belongs_to :user
+    belongs_to :category 
+    has_many :comments 
+    has_many :users, through :comments
+    
+    
+    attribues:
+    title 
+    content 
+
+2. Users 
+    has_many :posts 
+    has_many :comments 
+    has_many :commented_posts, through :comments
+    has_many :categories, through :posts 
+
+    attribues: 
+    username
+    email
+    password_digest
+
+3. Comment  join table = posts & users 
+    belongs_to :user
+    belongs_to :post 
+
+    attribues:
+    content 
+
+4. categories 
+     
+    has_many :posts 
+    has_many :users, through :posts 
+
+    attribues:
+    name
+
+if you have webpacker missing error: do: 
+    rails webpacker:install
+
+webpacker requires yarn install: 
+    npm install --global yarn 
+
+To remove a git from directory 
+    
