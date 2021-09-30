@@ -1,5 +1,5 @@
 Models are: 
-1. Posts    join table = categories & users 
+1. Post    join table = categories & users 
     belongs_to :user
     belongs_to :category 
     has_many :comments 
@@ -10,7 +10,7 @@ Models are:
     title 
     content 
 
-2. Users 
+2. User 
     has_many :posts 
     has_many :comments 
     has_many :commented_posts, through :comments
@@ -43,4 +43,8 @@ webpacker requires yarn install:
     npm install --global yarn 
 
 To remove a git from directory 
-    
+
+Under models > user.rb 
+has_secure_password # This give us access to authentication, validate password and its comformation if we decide to use it 
+
+we use private method to tell which params are permitted or not permitted
