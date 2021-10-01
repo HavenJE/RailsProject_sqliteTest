@@ -11,6 +11,23 @@
   </head>
 
   <body>
+
+    <div>
+      <br>  
+      <% if logged_in? %>
+      <%= link_to "Add an Exercise", new_exercise_path %> |
+      <%= link_to "Check All Exercises", exercises_path %> |
+      <br>
+      <%= link_to "logout", logout_path, method:"delete" %> 
+
+      <% else %>
+
+        <%= link_to "Sign UP", signup_path %> 
+        <%= link_to "Log In", login_path %>
+      <% end %> 
+
+    </div>
+
     <%= yield %>
   </body>
 </html>
